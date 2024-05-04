@@ -1,3 +1,5 @@
+import "./index.css"
+
 
 export const App=()=> {
     // const array=[22,0,-45,1001,8,6,-0.1,101,2.5,-5555]
@@ -37,15 +39,12 @@ export const App=()=> {
     // }
 
 
-
     // function half(number) {
     //     return number / 2;
     // }
     // const half=(number)=>{
     //     return number / 2;
     // }
-
-
 
 
     // function showConsole() {
@@ -55,8 +54,6 @@ export const App=()=> {
     // const showConsole=()=>{
     //     console.log('lincode');
     // }
-
-
 
 
     // function concatWords(first, second) {
@@ -75,13 +72,10 @@ export const App=()=> {
     // }
 
 
-
     // const logging = text => console.log(text);
     // function logging(text){
     //     console.log(text)
     // }
-
-
 
 
     // const add = (x,y) => {
@@ -94,9 +88,6 @@ export const App=()=> {
     //
     //     return z * x * y;
     // }
-
-
-
 
 
     // const onlyPositive = (number) => {
@@ -114,14 +105,84 @@ export const App=()=> {
     //     return true;
     // }
 
-    return(
-      <div className="App">
-          {/*<ul>{listItem}</ul>*/}
-          {/*{array}*/}
-      </div>
-  )
+    ///////////////////////////////////////////////////
 
+
+    // function App(props) {
+    //     const isDay = props.hours < 18;
+    //
+    //     return(isDay ? "сейчас день": "сейчас вечер")
+    // }
+    // const props={hours:24};
+    // console.log(App(props));
+
+
+    // Объясни, почему следующий компонент всегда выводит “первый текст” при любых пропсах?
+
+    // function BadComponent(props) {
+    //     return(
+    //         <div>
+    //             {props ? "первый текст" : "второй текст"}
+    //         </div>
+    //     );
+    // }
+    //
+    // потому что props ничему не равен *_*
+
+
+    // const dark = false;
+
+
+
+    return (
+        <div className="App">
+            {/*<ul>{listItem}</ul>*/}
+            {/*{array}*/}
+            {/*{dark ? <div className="dark"> Hello, ternary operator!</div>:<div className="light"> Hello, ternary operator!</div>}*/}
+
+        </div>
+    );
 
 }
 
 
+
+
+export const SomeBlock=()=> {
+    const dark = false;
+
+    return (
+        <div className="Dark">
+            {dark ? <div className="dark"> Hello, ternary operator!</div> :
+                <div className="light"> Hello, ternary operator!</div>}
+
+
+        </div>
+
+    );
+
+}
+
+
+    export const ParentBlock = (props) => {
+        const number = 23;
+        function Small() {
+            return (
+                <div className="Small">Small</div>
+            )
+        }
+
+        function Large() {
+            return (
+                <div className="Large">Large</div>
+            )
+        }
+        return (
+            <div className="ParentBlock">
+                {
+                    number <= 50 ? <div className="Small">Small</div> : <div className="Large">Large</div>
+                }
+            </div>
+        )
+
+    }

@@ -2,3 +2,22 @@ body {
   margin: 0;
 
 }
+
+div {
+  margin: auto;
+  width: 300px;
+  padding: 30px;
+  text-align: center;
+}
+
+.dark {
+  background-color: black;
+  color: white;
+  border: 1px solid yellow;
+}
+
+.light {
+  background-color: yellow;
+  color: brown;
+  border: 1px solid brown;
+}
