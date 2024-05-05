@@ -3,21 +3,71 @@ body {
 
 }
 
-div {
+.App{
+  width: 600px;
   margin: auto;
-  width: 300px;
-  padding: 30px;
+}
+.header{
+  margin-bottom: 30px;
+}
+.header>h1{
   text-align: center;
 }
-
-.dark {
-  background-color: black;
-  color: white;
-  border: 1px solid yellow;
+.forms{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
 }
-
-.light {
-  background-color: yellow;
-  color: brown;
-  border: 1px solid brown;
+.forms>input{
+  width: 70%;
+  border: none;
+  background-color: #e0e0e0;
+  padding: 10px;
+  border-radius:5px ;
+}
+.forms>button{
+  width: 150px;
+  background-color: blueviolet;
+  border: none;
+  color: white;
+  font-size:20px ;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.todo{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #b1b1b1;
+}
+.favorite{
+  margin-right: 20px;
+}
+.todo>.favorite>button{
+  font-size: 25px;
+  color: red;
+  border: none;
+  background-color:transparent;
+  outline: none;
+  cursor: pointer;
+}
+.todo>.todo_text{
+  flex: 1;
+  font-size: 18px;
+  font-weight: 500 ;
+}
+.actions>button{
+  font-size: 25px;
+  color: red;
+  border: none;
+  background-color:transparent;
+  outline: none;
+  cursor: pointer;
+}
+.selected{
+  background-color:#F9F7D7 ;
+}
+.selected>.favorite>button{
+  color: #ffea00;
 }
