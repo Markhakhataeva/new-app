@@ -34,6 +34,9 @@ body {
   border-radius: 5px;
   cursor: pointer;
 }
+.forms > button:disabled {
+  background-color: #797979;
+}
 .todo{
   display: flex;
   justify-content: space-between;
@@ -71,3 +74,4 @@ body {
 .selected>.favorite>button{
   color: #ffea00;
 }
+

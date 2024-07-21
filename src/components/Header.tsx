@@ -1,6 +1,6 @@
 import React from 'react';
 
-export  const Header= (props)=> {
+export  const Header= ()=> {
     return (
         <div className="header">
             <h1>Список дел</h1>

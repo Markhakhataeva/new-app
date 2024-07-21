@@ -1,13 +1,20 @@
 import "./index.css"
-import {useState} from "react";
+import {FC, useState} from "react";
 import {Header} from "./components/Header";
 import {Forms} from "./components/Forms";
 import {Todos} from "./components/Todos";
 
-export const App=()=> {
+interface StateTodos {
+    favorite:boolean
+    text:string
+
+}
 
 
-    const [todos,setTodos]=useState([
+export const App: FC = () => {
+
+
+    const [todos,setTodos] = useState<Array<StateTodos>>([
         {favorite:false,text:"купить продукты"},
         {favorite:true,text:"купить бананы"},
         {favorite:false,text:"купить машину"},
@@ -15,20 +22,24 @@ export const App=()=> {
         {favorite:false,text:"купить участок"},
     ])
 
-    const [text,setText]=useState("")
+    const [text,setText] = useState<string>("")
 
-    const addTodo=()=>{
+
+    const addTodo = (): void => {
         setTodos([{
-            text:text,
+            text: text,
             favorite: false
-        },...todos
+        }, ...todos
         ])
         setText("")
+
     }
 
+    
 
-    const deleteTodo=(indexOfDeleted)=>{
-        const filterTodos=todos.filter((todo,index)=>{
+
+    const deleteTodo = (indexOfDeleted: number): void => {
+        const filterTodos=todos.filter((todo,index: number): boolean => {
             if(index===indexOfDeleted){
                return false
             }
@@ -37,8 +48,8 @@ export const App=()=> {
         setTodos(filterTodos)
     }
 
-    const makeFavorite=(indexOf)=>{
-        const newTodos=todos.map((item,index)=> {
+    const makeFavorite = (indexOf: number): void => {
+        const newTodos=todos.map((item,index: number): StateTodos => {
             if(index===indexOf){
                 return {
                     ...item,
@@ -50,11 +61,10 @@ export const App=()=> {
     }
 
 
-
     return (
         <div className="App">
             <Header />
-            <Forms text={text} addTodo={addTodo} setText={setText}/>
+            <Forms text={text} addTodo={addTodo}  setText={setText} todos={todos} />
             <Todos todos={todos} makeFavorite={makeFavorite} deleteTodo={deleteTodo}/>
         </div>
     );
