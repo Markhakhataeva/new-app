@@ -1,13 +1,19 @@
-import "./index.css"
-import {useState} from "react";
-import {Header} from "./components/Header";
-import {Forms} from "./components/Forms";
-import {Todos} from "./components/Todos";
-
-export const App=()=> {
+import "../index.scss"
+import React, {FC, useState} from "react";
+import {Forms} from "./Forms/Forms";
+import {Todos} from "./Todos/Todos";
+import {Header} from "./Header/Headerr";
 
 
-    const [todos,setTodos]=useState([
+interface State {
+    favorite:boolean
+    text:string
+}
+
+export const App:FC = () => {
+
+
+    const [todos,setTodos] = useState<State[]>([
         {favorite:false,text:"купить продукты"},
         {favorite:true,text:"купить бананы"},
         {favorite:false,text:"купить машину"},
@@ -15,9 +21,9 @@ export const App=()=> {
         {favorite:false,text:"купить участок"},
     ])
 
-    const [text,setText]=useState("")
+    const [text,setText] = useState<string>("")
 
-    const addTodo=()=>{
+    const addTodo = () => {
         setTodos([{
             text:text,
             favorite: false
@@ -27,8 +33,8 @@ export const App=()=> {
     }
 
 
-    const deleteTodo=(indexOfDeleted)=>{
-        const filterTodos=todos.filter((todo,index)=>{
+    const deleteTodo = (indexOfDeleted:number):void => {
+        const filterTodos=todos.filter((todo,index:number) => {
             if(index===indexOfDeleted){
                return false
             }
@@ -37,8 +43,8 @@ export const App=()=> {
         setTodos(filterTodos)
     }
 
-    const makeFavorite=(indexOf)=>{
-        const newTodos=todos.map((item,index)=> {
+    const makeFavorite = (indexOf:number):void => {
+        const newTodos=todos.map((item,index:number) => {
             if(index===indexOf){
                 return {
                     ...item,
@@ -53,7 +59,7 @@ export const App=()=> {
 
     return (
         <div className="App">
-            <Header />
+            <Header/>
             <Forms text={text} addTodo={addTodo} setText={setText}/>
             <Todos todos={todos} makeFavorite={makeFavorite} deleteTodo={deleteTodo}/>
         </div>

@@ -1,0 +1,23 @@
+@import "style";
+
+.forms{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+.forms>input{
+  width: 70%;
+  border: none;
+  background-color: #e0e0e0;
+  padding: 10px;
+  border-radius:5px ;
+}
+.forms>button{
+  width: 150px;
+  background-color: $color-p;
+  border: none;
+  color: $color-w;
+  font-size:20px ;
+  border-radius: 5px;
+  cursor: pointer;
+}
