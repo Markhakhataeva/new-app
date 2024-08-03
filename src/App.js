@@ -5,18 +5,7 @@ import {Forms} from "./components/Forms";
 import {Todos} from "./components/Todos";
 
 export const App=()=> {
-
-
-
     const [text,setText]=useState("")
-
-
-
-
-
-
-
-
 
     return (
         <div className="App">
