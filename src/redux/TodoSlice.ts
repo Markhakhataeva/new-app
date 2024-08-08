@@ -1,6 +1,18 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-const initialState = {
+
+interface initialStateProps{
+    todos:Array<{
+        favorite:boolean,
+        text:string
+    }>
+
+}
+
+
+
+
+const initialState :initialStateProps= {
     todos:[
         {favorite:false,text:"купить продукты"},
         {favorite:true,text:"купить бананы"},
